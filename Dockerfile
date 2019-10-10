@@ -8,4 +8,10 @@ RUN apt-get update \
     && rm /var/log/dpkg.log \
     && curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && mv wp-cli.phar /usr/bin/wp-cli \
-    && chmod +x /usr/bin/wp-cli
+    && chmod +x /usr/bin/wp-cli \
+    && rm /usr/local/etc/php/conf.d/error-logging.ini
+
+# Configure PHP for production environment
+COPY php.ini /usr/local/etc/php/php.ini
+
+
