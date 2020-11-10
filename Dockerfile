@@ -1,4 +1,4 @@
-FROM wordpress:5.1
+FROM wordpress:5
 
 RUN apt-get update \
     && apt-get install -y libldap2-dev libgd-dev less mysql-client \
